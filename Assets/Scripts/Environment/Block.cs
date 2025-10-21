@@ -2,6 +2,7 @@
 {
     public class Block
     {
-        public static BlockType Type;
+        public BlockType Type;
+        public BackgroundBlock BackgroundBlock;
     }
 }

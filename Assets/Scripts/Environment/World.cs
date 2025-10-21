@@ -16,6 +16,11 @@ namespace Environment
             int chunkCoordinate = globalX / 16;
             return chunks[chunkCoordinate].GetBlock(globalX - chunkCoordinate * 16, globalY);
         }
+        
+        public bool IsBlockAir(int globalX, int globalY)
+        {
+            return GetBlock(globalX, globalY).Type == BlockType.Air;
+        }
 
         public World()
         {
