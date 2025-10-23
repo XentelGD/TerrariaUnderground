@@ -14,5 +14,6 @@ namespace Environment
         public Block Block;
         public Dictionary<string, object> IndividualProperties = new Dictionary<string, object>();
         public BackgroundBlock BackgroundBlock;
+        
     }
 }
