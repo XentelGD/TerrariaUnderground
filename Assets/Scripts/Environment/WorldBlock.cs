@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using Data;
 
 namespace Environment
@@ -14,6 +15,10 @@ namespace Environment
         public Block Block;
         public Dictionary<string, object> IndividualProperties = new Dictionary<string, object>();
         public BackgroundBlock BackgroundBlock;
-        
+
+        public WorldBlock()
+        {
+            
+        }
     }
 }
