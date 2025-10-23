@@ -1,19 +1,29 @@
 using UnityEngine;
 using Environment;
 
-public class GameManager : MonoBehaviour
+namespace Core
 {
-
-    private World World = new World();
     
-    void Start()
+    /*
+     * -------------------------------------------------------
+     * Этот класс является входной точкой нашей игры.
+     * Т.е. это главный класс
+     * -------------------------------------------------------
+     */
+    
+    public class GameManager : MonoBehaviour
     {
+    
+        private World World = new World();
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        void Start()
+        {
+            
+        }
         
+        void Update()
+        {
+            
+        }
     }
 }

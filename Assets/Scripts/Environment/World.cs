@@ -1,7 +1,13 @@
 ﻿using System.Collections.Generic;
+using Data;
 
 namespace Environment
 {
+    /*
+     * -------------------------------------------------------
+     * Этот класс хранит игровой мир
+     * -------------------------------------------------------
+     */
     public class World
     {
         // Размер мира в чанках
@@ -11,15 +17,15 @@ namespace Environment
         public Dictionary<int, Chunk> chunks = new Dictionary<int, Chunk>();
         
         // Функция для получения блока по его глобальным координатам
-        public Block GetBlock(int globalX, int globalY)
+        public WorldBlock GetWorldBlock(int globalX, int globalY)
         {
             int chunkCoordinate = globalX / 16;
-            return chunks[chunkCoordinate].GetBlock(globalX - chunkCoordinate * 16, globalY);
+            return chunks[chunkCoordinate].GetWorldBlock(globalX - chunkCoordinate * 16, globalY);
         }
         
-        public bool IsBlockAir(int globalX, int globalY)
+        public bool IsWorldBlockAir(int globalX, int globalY)
         {
-            return GetBlock(globalX, globalY).Type == BlockType.Air;
+            return GetWorldBlock(globalX, globalY).Block == AllBlocks.Air;
         }
 
         public World()
