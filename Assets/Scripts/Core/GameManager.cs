@@ -17,22 +17,24 @@ namespace Core
     public class GameManager : MonoBehaviour
     {
     
-        private World World = new World();
-        public Camera Camera;
-        
+        public World World = new World();
+        public Camera camera;
+        public GameObject blockPrefab, blockContainer;
+
         void Start()
         {
             for (int i = 0; i < 20; i++)
             {
-                World.Chunks[i - 10] = new Chunk(i);
+                World.Chunks[i - 10] = new Chunk(i - 10);
             }
             
             ChunkLoader loader = new ChunkLoader();
-            List<Chunk> loadedChunks = loader.GetLoadedChunks(Camera, World.Chunks);
+            List<Chunk> loadedChunks = loader.GetLoadedChunks(camera, World.Chunks);
+            print(loadedChunks);
 
             foreach (Chunk chunk in loadedChunks)
             {
-                ChunkRenderer.Setup(chunk);
+                ChunkRenderer.Setup(blockPrefab, blockContainer, chunk);
             }
             
         }

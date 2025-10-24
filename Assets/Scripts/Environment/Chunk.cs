@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Data;
+using UnityEngine;
 
 namespace Environment
 {
@@ -10,16 +11,16 @@ namespace Environment
      */
     public class Chunk
     {
-        public WorldBlock[,] Blocks = new WorldBlock[16, 324];
+        public WorldBlock[,] Blocks = new WorldBlock[Constants.ChunkWidth, Constants.ChunkHeight];
         public int Position;
 
         public Chunk(int position)
         {
             Position = position;
             
-            for (int x = 0; x < 16; x++)
+            for (int x = 0; x < Constants.ChunkWidth; x++)
             {
-                for (int y = 0; y < 324; y++)
+                for (int y = 0; y < Constants.ChunkHeight; y++)
                 {
                     Blocks[x, y] = new WorldBlock();
                 }
