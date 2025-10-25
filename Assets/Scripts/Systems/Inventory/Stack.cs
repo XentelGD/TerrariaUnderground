@@ -9,10 +9,10 @@
     
     public class Stack
     {
-        public Item Item;
+        public string Item;
         public int Amount;
 
-        public Stack(Item item, int amount)
+        public Stack(string item, int amount)
         {
             Item = item;
             Amount = amount;

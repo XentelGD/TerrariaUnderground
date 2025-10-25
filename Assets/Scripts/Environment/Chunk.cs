@@ -11,7 +11,7 @@ namespace Environment
      */
     public class Chunk
     {
-        public WorldBlock[,] Blocks = new WorldBlock[Constants.ChunkWidth, Constants.ChunkHeight];
+        public WorldBlock[,] WorldBlocks = new WorldBlock[Constants.ChunkWidth, Constants.ChunkHeight];
         public int Position;
 
         public Chunk(int position)
@@ -22,14 +22,16 @@ namespace Environment
             {
                 for (int y = 0; y < Constants.ChunkHeight; y++)
                 {
-                    Blocks[x, y] = new WorldBlock();
+                    WorldBlock block = new WorldBlock();
+                    block.Block = Blocks.Dirt;
+                    WorldBlocks[x, y] = block;
                 }
             }
         }
 
         public WorldBlock GetWorldBlock(int localX, int localY)
         {
-            return Blocks[localX, localY];
+            return WorldBlocks[localX, localY];
         }
     }
 }

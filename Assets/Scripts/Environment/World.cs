@@ -25,7 +25,7 @@ namespace Environment
         
         public bool IsWorldBlockAir(int globalX, int globalY)
         {
-            return GetWorldBlock(globalX, globalY).Block == AllBlocks.Air;
+            return GetWorldBlock(globalX, globalY).Block == Blocks.Air;
         }
 
         public World()

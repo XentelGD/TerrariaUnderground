@@ -18,9 +18,9 @@ namespace Data
         public static Drop Empty = new Drop();
 
         // Добавить в список дропов новый дроп
-        public Drop AddItem(Item item, int amount)
+        public Drop AddItem(string itemID, int amount)
         {
-            DropItems.Add(new Stack(item, amount));
+            DropItems.Add(new Stack(itemID, amount));
             return this;
         }
         
@@ -43,7 +43,7 @@ namespace Data
             
         }
         
-        public Drop(Item item, int amount)
+        public Drop(string item, int amount)
         {
             DropItems.Add(new Stack(item, amount));
         }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 using Environment;
 using Environment.Systems;
@@ -23,14 +24,18 @@ namespace Core
 
         void Start()
         {
-            for (int i = 0; i < 20; i++)
+            Sprites.RegisterAll();
+            Blocks.RegisterAll();
+            Items.RegisterAll();
+            
+            
+            for (int i = 0; i < 200; i++)
             {
-                World.Chunks[i - 10] = new Chunk(i - 10);
+                World.Chunks[i - 100] = new Chunk(i - 100);
             }
             
             ChunkLoader loader = new ChunkLoader();
             List<Chunk> loadedChunks = loader.GetLoadedChunks(camera, World.Chunks);
-            print(loadedChunks);
 
             foreach (Chunk chunk in loadedChunks)
             {

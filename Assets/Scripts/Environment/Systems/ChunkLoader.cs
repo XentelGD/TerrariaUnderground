@@ -17,8 +17,8 @@ namespace Environment.Systems
         // Возвращает список чанков, которые расположены близко к камере
         public List<Chunk> GetLoadedChunks(Camera camera, Dictionary<int, Chunk> chunks)
         {
-            
-            float cameraChunkX = camera.transform.position.x / Constants.ChunkWidth / 2;
+
+            float cameraChunkX = camera.transform.position.x / Constants.ChunkWidth;
             List<Chunk> nearChunks = new List<Chunk>();
             for (int x = 0; x < Constants.RenderDistance * 2; x++)
             {
